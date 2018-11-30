@@ -201,11 +201,12 @@ header.masthead .device-container .screen img {
 section.download {
   position: relative;
   padding: 150px 0;
+  margin-bottom: 40px;
 }
  
 section.download h2 {
   font-size: 50px;
-  margin-top: 0;
+  margin-bottom: 20px;
 }
  
 section.download .badges .badge-link {
