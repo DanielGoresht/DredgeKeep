@@ -445,6 +445,9 @@ function draw_hand(hn){
 		if (looting_check == 1 && horn_check == 1 && dredger_count == 0){
 		hand_value += 50;	
 		}
+		if (reunion_check == 1 && horn_check == 1 && dredger_count == 0 && land_count > 1){
+			hand_value += 30;
+		}
 
 
         //penalties
