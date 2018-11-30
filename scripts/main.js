@@ -23,7 +23,7 @@ var decklist = ["Bloodghast", "Bloodghast", "Bloodghast", "Bloodghast",
 "Scalding Tarn", "Scalding Tarn", "Scalding Tarn", 
 "Stomping Ground", "Stomping Ground"];
 
-var hand = ["","","","","","",""];
+var hand = ["Faithless Looting","Faithless Looting","Faithless Looting","Cathartic Reunion","Stinkweed Imp","Stinkweed Imp","Stinkweed Imp"];
 
 
 //generates hand from decklist
@@ -460,7 +460,7 @@ function draw_hand(hn){
         }
 
         if (land_count == 0){
-        	hand_value -= 120;
+        	hand_value -= 200;
         }
 
         if (reunion_check == 1 && looting_check == 0 && land_count == 1){
@@ -556,6 +556,6 @@ function change_text(hv){
 
 
 
-generateHand(decklist, hand)
+//generateHand(decklist, hand)
 
 
