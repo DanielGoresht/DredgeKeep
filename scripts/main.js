@@ -480,12 +480,12 @@ function draw_hand(hn){
 function change_text(hv){
 	//sets the phrase output baised on hand score
 	if (hv <= 300){
-		display_text = "Say Hi to The BOOGYMAN!";
+		display_text = "The BOOGYMAN!";
 	}
 
 
 	if (hv <= 150){
-		display_text = "Time to Turn This Deck Upside Down";
+		display_text = "Flip the Deck Over";
 	}
 
 	if (hv <= 125){
