@@ -149,7 +149,7 @@ function draw_hand(hn){
 
             if (hand[i] == "Faithless Looting") {
                 show_image("img/faithless-looting.jpg", 223, 311, "Faithless Looting");
-                hand_value += 15;
+                hand_value += 20;
                 looting_check = 1;
                 if (enabler_count == 0){
                 	hand_value += 15
@@ -371,8 +371,12 @@ function draw_hand(hn){
         	hand_value += 3;
         }
         if (dredger_count == 0 && horn_check == 1) {
-        	hand_value += 15;
+        	hand_value += 25;
         }
+        if (dredger_count == 0 && horn_check == 1 && enabler_count > 1) {
+        	hand_value += 45;
+        }
+
 
         if (looting_check == 0 && reunion_check == 0 && conflagrate_check == 1 && land_count > 1 ){
         	hand_value += 40;
@@ -400,14 +404,17 @@ function draw_hand(hn){
         	hand_value -=  50;
         }
         if (dredger_count == 0){
-        	hand_value -= 30;
+        	hand_value -= 40;
+        }
+        if (land_count == 0){
+        	hand_value -= 50;
         }
 
         if (reunion_check == 1 && looting_check == 0 && land_count == 1){
         	hand_value -= 75;
         }
         if (land_count < 2 && looting_check == 0){
-        	hand_value -= 90;
+        	hand_value -= 130;
         }
 
         change_text(hand_value);
@@ -419,12 +426,50 @@ function draw_hand(hn){
 
 function change_text(hv){
 	//sets the phrase output baised on hand score
-	if (hv > 0){
-		display_text = "Keep.";
-	} 
-	if (hv <= 0){
-		display_text = "Mull.";
+	if (hv <= 300){
+		display_text = "Say Hi to The BOOGYMAN!";
 	}
+
+
+	if (hv <= 150){
+		display_text = "Time to Turn This Deck Upside Down";
+	}
+
+	if (hv <= 110){
+		display_text = "Snap Keep";
+	}
+
+	if (hv <= 90){
+		display_text = "Easy Keep";
+	}
+
+
+	if (hv <= 60){
+		display_text = "Should Be Good Enough";
+	}
+
+	if (hv <= 30){
+		display_text = "Shrug.. Keep";
+	}
+
+	if (hv <= -0){
+		display_text = "'I'd Mull, but I'd be Theatrical About It'";
+	}
+	if (hv <= -40){
+		display_text = "We Can Do Better";
+	}
+	if (hv <= -100){
+		display_text = "Snap Mull";
+	}
+	if (hv <= -220){
+		display_text = "OoooF!";
+	}
+	if (hv < -380){
+		display_text = "That's A Yikes From Me Dawg";
+	} 
+
+
+
 
 }
 
