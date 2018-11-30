@@ -149,7 +149,7 @@ function draw_hand(hn){
 
             if (hand[i] == "Faithless Looting") {
                 show_image("img/faithless-looting.jpg", 223, 311, "Faithless Looting");
-                hand_value += 40;
+                hand_value += 50;
                 looting_check = 1;
                 if (enabler_count == 0){
                 	hand_value += 15
@@ -257,7 +257,7 @@ function draw_hand(hn){
                 	
                 }
                 if (green_land_check == 0){
-                	hand_value += 20;
+                	hand_value += 40;
                 	green_land_check = 1;
                 }
                 land_count ++;
@@ -279,7 +279,7 @@ function draw_hand(hn){
                 	
                 }
                 if (green_land_check == 0){
-                	hand_value += 20;
+                	hand_value += 40;
                 	green_land_check = 1;
                 }
                 land_count ++;
@@ -301,7 +301,7 @@ function draw_hand(hn){
                 	
                 }
                 if (green_land_check == 0){
-                	hand_value += 20;
+                	hand_value += 40;
                 	green_land_check = 1;
                 }
                 land_count ++;
@@ -323,7 +323,7 @@ function draw_hand(hn){
                 	
                 }
                 if (green_land_check == 0){
-                	hand_value += 20;
+                	hand_value += 40;
                 	green_land_check = 1;
                 }
                 land_count ++;
@@ -345,7 +345,7 @@ function draw_hand(hn){
                 	
                 }
                 if (green_land_check == 0){
-                	hand_value += 20;
+                	hand_value += 40;
                 	green_land_check = 1;
                 }
                 land_count ++;
@@ -377,13 +377,13 @@ function draw_hand(hn){
         	hand_value += 25;
         }
         if (loam_check > 0 && fetch_check == 1){
-        	hand_value += 3;
+        	hand_value += 5;
         }
         if (dredger_count == 0 && horn_check == 1) {
-        	hand_value += 35;
+        	hand_value += 45;
         }
         if (dredger_count == 0 && horn_check == 1 && enabler_count > 1) {
-        	hand_value += 105;
+        	hand_value += 155;
         }
         if (land_count == 1 && horn_check == 1 && enabler_count > 1){
         	hand_value += 50;
@@ -400,7 +400,7 @@ function draw_hand(hn){
         	hand_value += 40;
         }
         if (looting_check > 0 && land_count > 0){
-        	hand_value += 20;
+        	hand_value += 10;
         }
 
         if (dredger_count == 0 && amalghast_count > 1 && looting_check == 1 && land_count > 0){
@@ -409,26 +409,44 @@ function draw_hand(hn){
         if (looting_check == 0 && dredger_count == 0 && amalghast_count > 1 && reunion_check == 1 && land_count > 1){
         	hand_value += 25;
         }
-
+        if (looting_check == 1 && reunion_check == 1 && land_count > 1){
+        	hand_value += 50;
+        }
 
 
         //penalties
 
         if (enabler_count == 0){
-        	hand_value -=  70;
+        	hand_value -=  90;
         }
         if (dredger_count == 0){
         	hand_value -= 70;
         }
+        if (land_count ==1){
+        	hand_value -= 30;
+        }
+
         if (land_count == 0){
         	hand_value -= 120;
         }
 
         if (reunion_check == 1 && looting_check == 0 && land_count == 1){
-        	hand_value -= 10;
+        	hand_value -= 40;
         }
         if (land_count < 2 && looting_check == 0){
-        	hand_value -= 50;
+        	hand_value -= 30;
+        }
+
+        if (enabler_count == 1 && horn_check == 1){
+        	hand_value -= 20;
+        }
+
+        if (dredger_count == 1 && loam_check == 1){
+        	hand_value -= 25;
+        }
+
+        if (enabler_count == 1 && dredger_count == 0){
+        	hand_value -= 20;
         }
 
         change_text(hand_value);
