@@ -23,7 +23,7 @@ var decklist = ["Bloodghast", "Bloodghast", "Bloodghast", "Bloodghast",
 "Scalding Tarn", "Scalding Tarn", "Scalding Tarn", 
 "Stomping Ground", "Stomping Ground"];
 
-var hand = ["", "", "", "", "", "", ""];
+var hand = ["Faithless Looting","Faithless Looting","Faithless Looting","Copperline Gorge","Scalding Tarn","Stinkweed Imp","Stinkweed Imp"];
 
 
 //generates hand from decklist
@@ -192,7 +192,7 @@ function draw_hand(hn){
 
             if (hand[i] == "Shriekhorn") {
                 show_image("img/shriekhorn.jpg", 223, 311, "Shriekhorn");
-                hand_value += 4;
+                hand_value += 15;
                 horn_check = 1;
                 if (enabler_count == 0){
                 	hand_value += 15
@@ -409,7 +409,7 @@ function draw_hand(hn){
         	hand_value -= 45;
         }
         if (land_count < 2 && looting_check == 0){
-        	hand_value -= 70;
+        	hand_value -= 90;
         }
 
         change_text(hand_value);
@@ -435,6 +435,6 @@ function change_text(hv){
 
 
 
-generateHand(decklist, hand)
+//generateHand(decklist, hand)
 
 
