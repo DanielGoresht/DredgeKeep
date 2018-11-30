@@ -166,7 +166,7 @@ function draw_hand(hn){
 
             if (hand[i] == "Cathartic Reunion") {
                 show_image("img/cathartic-reunion.jpg", 223, 311, "Cathartic Reunion");
-                hand_value += 5;
+                hand_value += 10;
                 reunion_check = 1;
                 if (enabler_count == 0){
                 	hand_value += 15
@@ -195,7 +195,7 @@ function draw_hand(hn){
 
             if (hand[i] == "Shriekhorn") {
                 show_image("img/shriekhorn.jpg", 223, 311, "Shriekhorn");
-                hand_value += 15;
+                hand_value += 30;
                 horn_check = 1;
                 if (enabler_count == 0){
                 	hand_value += 15
