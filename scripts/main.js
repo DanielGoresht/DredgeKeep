@@ -238,6 +238,10 @@ function draw_hand(hn){
                 	hand_value += 5;
                 	
                 }
+                if (green_land_check == 0){
+                	hand_value += 40;
+                	green_land_check = 1;
+                }
                land_count ++;
               }
 
@@ -389,6 +393,17 @@ function draw_hand(hn){
         	hand_value += 50;
         }
 
+        if (looting_check == 1 && enabler_count > 1 && land_count == 1 && dredger_count > 0){
+        	hand_value += 10;
+        }
+
+        if (horn_check == 1 && reunion_check == 1 && land_count >1){
+        	hand_value += 20;
+        }
+
+        if (enabler_count > 1 && land_count > 1 && horn_check == 1  && dredger_count == 0){
+        	hand_value += 40;
+        }
 
         if (looting_check == 0 && reunion_check == 0 && conflagrate_check == 1 && land_count > 1 ){
         	hand_value += 40;
@@ -412,6 +427,9 @@ function draw_hand(hn){
         if (looting_check == 1 && reunion_check == 1 && land_count > 1){
         	hand_value += 50;
         }
+        if (enabler_count == 1 && horn_check == 1 && looting_check ==1 && land_count > 1 && green_land_check ==1){
+        	hand_value += 70;
+        }
 
 
         //penalties
@@ -420,7 +438,7 @@ function draw_hand(hn){
         	hand_value -=  90;
         }
         if (dredger_count == 0){
-        	hand_value -= 70;
+        	hand_value -= 90;
         }
         if (land_count ==1){
         	hand_value -= 30;
@@ -449,6 +467,9 @@ function draw_hand(hn){
         	hand_value -= 20;
         }
 
+        if (enabler_count > 1 && looting_check == 0 && shriekhorn_check == 0){
+        	hand_value -= 30;
+        }
         change_text(hand_value);
         //change_text(hand_value);
 
