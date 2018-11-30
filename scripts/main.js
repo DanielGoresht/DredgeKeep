@@ -408,8 +408,8 @@ function draw_hand(hn){
         if (reunion_check == 1 && looting_check == 0 && land_count == 1){
         	hand_value -= 45;
         }
-        if (land_count == 1 && looting_check == 0){
-        	hand_value -= 40;
+        if (land_count < 2 && looting_check == 0){
+        	hand_value -= 70;
         }
 
         change_text(hand_value);
