@@ -45,7 +45,6 @@ function generateHand(dl,hn){
 
 	var j;
 		for (j = 0; j < hn.length; j++) {
-			hn[j] = dl[Math.floor(Math.random()*dl.length)];
 			hn[j] = dl[j];
 			
 	}
@@ -489,7 +488,7 @@ function draw_hand(hn){
         	hand_value -= 30;
         }
         if (enabler_count == 1 && reunion_check == 1 && dredger_count == 1 && loam_check == 1){
-        	hand_value -30;
+        	hand_value -60;
         }
         if (enabler_count == 1 && horn_check == 1){
         	hand_value -20;
