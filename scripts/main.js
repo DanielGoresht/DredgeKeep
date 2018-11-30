@@ -425,10 +425,10 @@ function draw_hand(hn){
         	hand_value += 25;
         }
         if (looting_check == 1 && reunion_check == 1 && land_count > 1){
-        	hand_value += 50;
+        	hand_value += 70;
         }
         if (enabler_count == 1 && horn_check == 1 && looting_check ==1 && land_count > 1 && green_land_check ==1){
-        	hand_value += 70;
+        	hand_value += 50;
         }
 
 
