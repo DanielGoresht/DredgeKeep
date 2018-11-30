@@ -480,6 +480,9 @@ function draw_hand(hn){
         if (looting_check == 1 && enabler_count == 1 && amalghast_count > 1 && land_count > 1){
         	hand_value +20;
         }
+        if (looting_check == 1 && land_count > 0 && stink_check == 1 && dredger_count > 1){
+        	hand_value += 60;
+        }
 
 	
 		//alert(enabler_count);
@@ -528,13 +531,22 @@ function draw_hand(hn){
         	hand_value -= 60;
         }
         if (enabler_count == 1 && horn_check == 1){
-        	hand_value -= 20;
+        	hand_value -= 45;
         }
         if (enabler_count == 1 && dredger_count == 0){
         	hand_value -= 30;
         }
         if (land_count > 1 && enabler_count > 1 && green_land_check == 0){
         	hand_value -= 50;
+        }
+        if (land_count > 1 && enabler_count == 1 && green_land_check == 0){
+        	hand_value -= 25;
+        }
+        if (land_count > 1 && enabler_count > 1 && dredger_count == 1 && stink_check == 0){
+        	hand_value -30;
+        }
+        if (enabler_count == 2 && looting_check == 1 && horn_check == 1 && dredger_count == 0){
+        	hand_value -= 100;
         }
 
         change_text(hand_value);
@@ -551,24 +563,24 @@ function change_text(hv){
 	}
 
 
-	if (hv <= 180){
+	if (hv <= 220){
 		display_text = "Flip the Deck Over";
 	}
 
-	if (hv <= 140){
+	if (hv <= 160){
 		display_text = "Snap Keep";
 	}
 
-	if (hv <= 100){
+	if (hv <= 130){
 		display_text = "Easy Keep";
 	}
 
-	if (hv <= 75){
+	if (hv <= 90){
 		display_text = "Should Be Good Enough"
 	}
 
 
-	if (hv <= 55){
+	if (hv <= 65){
 		display_text = "Humm, I'll Keep";
 	}
 
