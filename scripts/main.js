@@ -45,7 +45,7 @@ function generateHand(dl,hn){
 
 	var j;
 		for (j = 0; j < hn.length; j++) {
-
+			hn[j] = dl[Math.floor(Math.random()*dl.length)];
 			hn[j] = dl[j];
 			
 	}
