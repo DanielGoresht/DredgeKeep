@@ -433,6 +433,12 @@ function draw_hand(hn){
         if (enabler_count == 1 && horn_check == 1 && looting_check ==1 && land_count > 1 && green_land_check ==1){
         	hand_value += 50;
         }
+	if (enabler_count > 1 && dredger_count == 0 && land_count > 1 && reunion_check == 0 && looting_check == 0){
+		hand_value += 60;
+	}
+	if (enabler_count > 2 && horn_check == 0 && reunion_check == 0 && land_count > 0){
+		hand_value += 90;
+	}
 
 
         //penalties
@@ -482,16 +488,16 @@ function draw_hand(hn){
 
 function change_text(hv){
 	//sets the phrase output baised on hand score
-	if (hv <= 300){
+	if (hv <= 400){
 		display_text = "The BOOGYMAN!";
 	}
 
 
-	if (hv <= 150){
+	if (hv <= 180){
 		display_text = "Flip the Deck Over";
 	}
 
-	if (hv <= 125){
+	if (hv <= 140){
 		display_text = "Snap Keep";
 	}
 
