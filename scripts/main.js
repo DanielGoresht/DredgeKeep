@@ -23,7 +23,7 @@ var decklist = ["Bloodghast", "Bloodghast", "Bloodghast", "Bloodghast",
 "Scalding Tarn", "Scalding Tarn", "Scalding Tarn", 
 "Stomping Ground", "Stomping Ground"];
 
-var hand = ["Faithless Looting","Faithless Looting","Faithless Looting","Copperline Gorge","Scalding Tarn","Stinkweed Imp","Stinkweed Imp"];
+var hand = ["","","","","","",""];
 
 
 //generates hand from decklist
@@ -156,7 +156,7 @@ function draw_hand(hn){
                 	enabler_count ++;
                 }
                 if (enabler_count == 1){
-                	hand_value += 5;
+                	hand_value += 10;
                 }
 
               }
@@ -260,7 +260,7 @@ function draw_hand(hn){
 
             if (hand[i] == "Copperline Gorge") {
                 show_image("img/copperline-gorge.jpg", 223, 311, "Copperline Gorge");
-                hand_value += 2;
+                hand_value += 3;
                 if (land_count == 0){
                 	hand_value += 40;
                 	land_count ++;
@@ -281,7 +281,7 @@ function draw_hand(hn){
 
             if (hand[i] == "Gemstone Mine") {
                 show_image("img/gemstone-mine.jpg", 223, 311, "Gemstone Mine");
-                hand_value += 2;
+                hand_value += 1;
                 if (land_count == 0){
                 	hand_value += 40;
                 	land_count ++;
@@ -375,10 +375,10 @@ function draw_hand(hn){
         }
 
         if (looting_check == 0 && reunion_check == 0 && conflagrate_check == 1 && land_count > 1 ){
-        	hand_value += 50;
+        	hand_value += 40;
         }
         if (reunion_check > 0 && land_count > 1 && dredger_count > 1){
-        	hand_value += 40;
+        	hand_value += 20;
         }
         if (reunion_check > 0 && land_count > 1 && dredger_count == 1){
         	hand_value += 20;
@@ -391,7 +391,7 @@ function draw_hand(hn){
         	hand_value += 30;
         }
         if (looting_check == 0 && dredger_count == 0 && amalghast_count > 1 && reunion_check == 1 && land_count > 1){
-        	hand_value += 30;
+        	hand_value += 25;
         }
 
         //penalties
@@ -402,11 +402,9 @@ function draw_hand(hn){
         if (dredger_count == 0){
         	hand_value -= 30;
         }
-        if (looting_check == 0 && horn_check == 0 && reunion_check == 1 ){
-        	hand_value -= 30;
-        }
+
         if (reunion_check == 1 && looting_check == 0 && land_count == 1){
-        	hand_value -= 45;
+        	hand_value -= 75;
         }
         if (land_count < 2 && looting_check == 0){
         	hand_value -= 90;
@@ -435,6 +433,6 @@ function change_text(hv){
 
 
 
-//generateHand(decklist, hand)
+generateHand(decklist, hand)
 
 
