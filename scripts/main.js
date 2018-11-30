@@ -149,7 +149,7 @@ function draw_hand(hn){
 
             if (hand[i] == "Faithless Looting") {
                 show_image("img/faithless-looting.jpg", 223, 311, "Faithless Looting");
-                hand_value += 20;
+                hand_value += 40;
                 looting_check = 1;
                 if (enabler_count == 0){
                 	hand_value += 15
@@ -206,35 +206,39 @@ function draw_hand(hn){
             if (hand[i] == "Blood Crypt") {
                 show_image("img/blood-crypt.jpg", 223, 311, "Blood Crypt");
                 hand_value += 2;
+                
                 if (land_count == 0){
                 	hand_value += 40;
-                	land_count ++;
+                	
                 }
                 if (land_count == 1){
                 	hand_value += 20;
-                	land_count ++;
+           
                 }
                 if (land_count == 2){
                 	hand_value += 5;
-                	land_count ++;
+                	
                 }
+                land_count ++;
               }
 
             if (hand[i] == "Bloodstained Mire") {
                 show_image("img/bloodstained-mire.jpg", 223, 311, "Bloodstained Mire");
                 hand_value += 2;
+
                 if (land_count == 0){
                 	hand_value += 40;
-                	land_count ++;
+                	
                 }
                 if (land_count == 1){
                 	hand_value += 20;
-                	land_count ++;
+                	
                 }
                 if (land_count == 2){
                 	hand_value += 5;
-                	land_count ++;
+                	
                 }
+               land_count ++;
               }
 
             if (hand[i] == "City of Brass") {
@@ -242,20 +246,21 @@ function draw_hand(hn){
                 hand_value += 2;
                 if (land_count == 0){
                 	hand_value += 40;
-                	land_count ++;
+                	
                 }
                 if (land_count == 1){
                 	hand_value += 20;
-                	land_count ++;
+                	
                 }
                 if (land_count == 2){
                 	hand_value += 5;
-                	land_count ++;
+                	
                 }
                 if (green_land_check == 0){
                 	hand_value += 20;
                 	green_land_check = 1;
                 }
+                land_count ++;
               }
 
             if (hand[i] == "Copperline Gorge") {
@@ -263,20 +268,21 @@ function draw_hand(hn){
                 hand_value += 3;
                 if (land_count == 0){
                 	hand_value += 40;
-                	land_count ++;
+                	
                 }
                 if (land_count == 1){
                 	hand_value += 20;
-                	land_count ++;
+                	
                 }
                 if (land_count == 2){
                 	hand_value += 5;
-                	land_count ++;
+                	
                 }
                 if (green_land_check == 0){
                 	hand_value += 20;
                 	green_land_check = 1;
                 }
+                land_count ++;
               }
 
             if (hand[i] == "Gemstone Mine") {
@@ -284,20 +290,21 @@ function draw_hand(hn){
                 hand_value += 1;
                 if (land_count == 0){
                 	hand_value += 40;
-                	land_count ++;
+                	
                 }
                 if (land_count == 1){
                 	hand_value += 20;
-                	land_count ++;
+                	
                 }
                 if (land_count == 2){
                 	hand_value += 5;
-                	land_count ++;
+                	
                 }
                 if (green_land_check == 0){
                 	hand_value += 20;
                 	green_land_check = 1;
                 }
+                land_count ++;
               }
 
             if (hand[i] == "Scalding Tarn") {
@@ -305,20 +312,21 @@ function draw_hand(hn){
                 hand_value += 2;
                 if (land_count == 0){
                 	hand_value += 40;
-                	land_count ++;
+                	
                 }
                 if (land_count == 1){
                 	hand_value += 20;
-                	land_count ++;
+                	
                 }
                 if (land_count == 2){
                 	hand_value += 5;
-                	land_count ++;
+                	
                 }
                 if (green_land_check == 0){
                 	hand_value += 20;
                 	green_land_check = 1;
                 }
+                land_count ++;
               }
 
             if (hand[i] == "Stomping Ground") {
@@ -326,20 +334,21 @@ function draw_hand(hn){
                 hand_value += 2;
                 if (land_count == 0){
                 	hand_value += 40;
-                	land_count ++;
+                	
                 }
                 if (land_count == 1){
                 	hand_value += 20;
-                	land_count ++;
+                	
                 }
                 if (land_count == 2){
                 	hand_value += 5;
-                	land_count ++;
+                	
                 }
                 if (green_land_check == 0){
                 	hand_value += 20;
                 	green_land_check = 1;
                 }
+                land_count ++;
               }
 
             if (hand[i] == "Mountain") {
@@ -347,17 +356,17 @@ function draw_hand(hn){
                 hand_value += 2;
                 if (land_count == 0){
                 	hand_value += 40;
-                	land_count ++;
+                	
                 }
                 if (land_count == 1){
                 	hand_value += 20;
-                	land_count ++;
+                	
                 }
                 if (land_count == 2){
                 	hand_value += 5;
-                	land_count ++;
+                	
                 }
-              
+              land_count ++;
 			}
 
         }
@@ -371,10 +380,13 @@ function draw_hand(hn){
         	hand_value += 3;
         }
         if (dredger_count == 0 && horn_check == 1) {
-        	hand_value += 25;
+        	hand_value += 35;
         }
         if (dredger_count == 0 && horn_check == 1 && enabler_count > 1) {
-        	hand_value += 45;
+        	hand_value += 105;
+        }
+        if (land_count == 1 && horn_check == 1 && enabler_count > 1){
+        	hand_value += 50;
         }
 
 
@@ -382,10 +394,10 @@ function draw_hand(hn){
         	hand_value += 40;
         }
         if (reunion_check > 0 && land_count > 1 && dredger_count > 1){
-        	hand_value += 20;
+        	hand_value += 30;
         }
         if (reunion_check > 0 && land_count > 1 && dredger_count == 1){
-        	hand_value += 20;
+        	hand_value += 40;
         }
         if (looting_check > 0 && land_count > 0){
         	hand_value += 20;
@@ -398,23 +410,25 @@ function draw_hand(hn){
         	hand_value += 25;
         }
 
+
+
         //penalties
 
         if (enabler_count == 0){
-        	hand_value -=  50;
+        	hand_value -=  70;
         }
         if (dredger_count == 0){
-        	hand_value -= 40;
+        	hand_value -= 70;
         }
         if (land_count == 0){
-        	hand_value -= 50;
+        	hand_value -= 120;
         }
 
         if (reunion_check == 1 && looting_check == 0 && land_count == 1){
-        	hand_value -= 75;
+        	hand_value -= 10;
         }
         if (land_count < 2 && looting_check == 0){
-        	hand_value -= 130;
+        	hand_value -= 50;
         }
 
         change_text(hand_value);
@@ -435,17 +449,21 @@ function change_text(hv){
 		display_text = "Time to Turn This Deck Upside Down";
 	}
 
-	if (hv <= 110){
+	if (hv <= 125){
 		display_text = "Snap Keep";
 	}
 
-	if (hv <= 90){
+	if (hv <= 100){
 		display_text = "Easy Keep";
 	}
 
+	if (hv <= 75){
+		display_text = "Should Be Good Enough"
+	}
 
-	if (hv <= 60){
-		display_text = "Should Be Good Enough";
+
+	if (hv <= 55){
+		display_text = "Humm, I'll Keep";
 	}
 
 	if (hv <= 30){
@@ -464,7 +482,7 @@ function change_text(hv){
 	if (hv <= -220){
 		display_text = "OoooF!";
 	}
-	if (hv < -380){
+	if (hv < -300){
 		display_text = "That's A Yikes From Me Dawg";
 	} 
 
