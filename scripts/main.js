@@ -63,7 +63,10 @@ function show_image(src, width, height, alt) {
     img.alt = alt;
 
     // This next line will just add it to the <body> tag
-    document.body.appendChild(img);
+
+
+    document.getElementById("download").appendChild(img);
+    //document.body.appendChild(img);
 }
 
 
@@ -522,7 +525,7 @@ function change_text(hv){
 		display_text = "OoooF!";
 	}
 	if (hv < -300){
-		display_text = "That's A Yikes From Me Dawg";
+		display_text = "That's A Yikes From Me";
 	} 
 
 
