@@ -566,15 +566,15 @@ function change_text(hv){
 	}
 
 
-	if (hv <= 220){
+	if (hv <= 280){
 		display_text = "Flip the Deck Over";
 	}
 
-	if (hv <= 160){
+	if (hv <= 220){
 		display_text = "Snap Keep";
 	}
 
-	if (hv <= 130){
+	if (hv <= 170){
 		display_text = "Easy Keep";
 	}
 
