@@ -448,7 +448,7 @@ function draw_hand(hn){
 			hand_value += 30;
 		}
 		if (reunion_check == 1 && enabler_count ==1 && dredger_count >1 && land_count >1 && green_land_check == 1){
-			hand_value += 30;
+			hand_value += 50;
 		}
 		if (enabler_count >1 && land_count >1 && green_land_check == 1){
 			hand_value += 50;
