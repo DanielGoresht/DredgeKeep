@@ -23,7 +23,7 @@ var decklist = ["Bloodghast", "Bloodghast", "Bloodghast", "Bloodghast",
 "Scalding Tarn", "Scalding Tarn", "Scalding Tarn", 
 "Stomping Ground", "Stomping Ground"];
 
-var hand = ["Faithless Looting","Faithless Looting","Faithless Looting","Cathartic Reunion","Stinkweed Imp","Stinkweed Imp","Stinkweed Imp"];
+var hand = ["","","","","","",""];
 
 
 //generates hand from decklist
@@ -556,6 +556,6 @@ function change_text(hv){
 
 
 
-//generateHand(decklist, hand)
+generateHand(decklist, hand)
 
 
