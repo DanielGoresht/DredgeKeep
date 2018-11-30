@@ -453,6 +453,13 @@ function draw_hand(hn){
 		if (enabler_count >1 && land_count >1 && green_land_check == 1){
 			hand_value += 50;
 		}
+		if (enabler_count > 1 && reunion_check == 1 && looting_check == 1 && loam_check == 1 && dredger_count == 1){
+			hand_value += 50;
+		}
+		if (enabler_count > 1 && reunion_check == 1 && horn_check == 1 && loam_check == 1 && dredger_count == 1){
+			hand_value += 50;
+		}
+
 
 
         //penalties
