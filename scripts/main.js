@@ -450,6 +450,9 @@ function draw_hand(hn){
 		if (reunion_check == 1 && enabler_count ==1 && dredger_count >1 && land_count >1 && green_land_check == 1){
 			hand_value += 30;
 		}
+		if (enabler_count >1 && land_count >1 && green_land_check == 1){
+			hand_value += 50;
+		}
 
 
         //penalties
@@ -498,6 +501,9 @@ function draw_hand(hn){
         }
         if (enabler_count == 2 && looting_check == 1 && horn_check == 1 && land_count >1 && dredger_count == 0){
         	hand_value -= 30;
+        }
+        if (enabler_count == 1){
+        	hand_value -= 20;
         }
         change_text(hand_value);
         //change_text(hand_value);
