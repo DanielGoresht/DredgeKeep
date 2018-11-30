@@ -420,7 +420,7 @@ function draw_hand(hn){
         	hand_value += 40;
         }
         if (reunion_check > 0 && land_count > 1 && dredger_count > 1){
-        	hand_value += 30;
+        	hand_value += 40;
         }
         if (reunion_check > 0 && land_count > 1 && dredger_count == 1){
         	hand_value += 10;
@@ -529,6 +529,9 @@ function draw_hand(hn){
         }
         if (enabler_count == 1 && reunion_check == 1 && dredger_count == 1 && loam_check == 1){
         	hand_value -= 60;
+        }
+        if (enabler_count == 1 && reunion_check == 1 && dredger_count == 1 && loam_check == 0 && stink_check == 0){
+        	hand_value -= 40;
         }
         if (enabler_count == 1 && horn_check == 1){
         	hand_value -= 45;
