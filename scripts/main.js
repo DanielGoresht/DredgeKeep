@@ -439,8 +439,11 @@ function draw_hand(hn){
 	if (enabler_count > 1 && horn_check == 0 && reunion_check == 0 && land_count > 0){
 		hand_value += 90;
 	}
-		if (enabler_count > 2 && dredger_count == 0 && land_count > 1 && reunion_check == 1 && looting_check == 0){
+	if (enabler_count > 2 && dredger_count == 0 && land_count > 1 && reunion_check == 1 && looting_check == 0){
 		hand_value += 60;
+	}
+	if (looting_check == 1 && horn_check == 1 && dredger_count == 0){
+		hand_value += 50;	
 	}
 
 
