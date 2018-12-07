@@ -49,14 +49,51 @@ p {
 }
  
 section {
-  padding: 100px 0;
+  padding: 10px 0;
 }
  
 section h2 {
   font-size: 50px;
 }
 
+
+
+
+
+
+
+
+
 input:hover {-webkit-filter: brightness(150%); }
+input
+{
+    max-width: 10%;
+    min-width: 50px;
+    height: auto;
+}
+
+#download img
+{
+    max-width: 9%;
+    min-width: 75px;
+    height: auto;
+}
+
+
+#message
+{
+    font-size: 4vw;
+
+}
+
+
+
+
+
+
+
+
+
  
 #mainNav {
   border-color: rgba(0, 0, 1, 0.05);
