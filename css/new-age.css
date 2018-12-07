@@ -55,6 +55,8 @@ section {
 section h2 {
   font-size: 50px;
 }
+
+input:hover {-webkit-filter: brightness(150%); }
  
 #mainNav {
   border-color: rgba(0, 0, 1, 0.05);
@@ -202,6 +204,7 @@ section.download {
   position: relative;
   padding: 50px 0;
   margin-bottom: 0px;
+
 }
  
 section.download h2 {
