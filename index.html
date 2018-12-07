@@ -127,6 +127,7 @@
 <p id="hand"></p>
 
 <script>
+
 function addCard(nameOfCard) {
   addCardToHand(nameOfCard);
   hand_value = -100;
@@ -136,9 +137,10 @@ function addCard(nameOfCard) {
 </script>
 <section id="message"></section> 
 
+
             </h2>
 
-              <a onclick="removeLastCard()" class="btn btn-outline btn-xl js-scroll-trigger">Remove Last</a>
+              <a onclick="mulligan()" class="btn btn-outline btn-xl js-scroll-trigger">Mulligan</a>
               <a onclick="clearHand()" class="btn btn-outline btn-xl js-scroll-trigger">Clear Hand</a>
               <a onclick="generateHand(decklist, hand)" class="btn btn-outline btn-xl js-scroll-trigger">Random Hand</a>
               <br>
@@ -167,9 +169,9 @@ function addCard(nameOfCard) {
       <div class="container">
         <h2>Any hand with a score over 0 is a keep</h2>
       <br>
-        <h2>Plans to evaluate cards with less than 7 cards more accurately coming soon</h2>
+        <h2>As you're hand size decreases, the less is required to keep a hand</h2>
       <br>
-      <h2>Click the pictures of cards to build a hand, or just generate random ones</h2>
+      <h2>Mobile interface still needs some work</h2>
       </div>
     </section>
 

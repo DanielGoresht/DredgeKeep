@@ -2,6 +2,10 @@
 var hand_value = -100;
 var display_text = "There was an error.";
 
+window.onload = function() {
+  document.getElementById("message").innerHTML = "Click the icons above to add cards to the hand.  Clicking a card in the hand removes it.";
+};
+
 var decklist = ["Bloodghast", "Bloodghast", "Bloodghast", "Bloodghast", 
 "Golgari Thug","Golgari Thug",  
 "Narcomoeba", "Narcomoeba", "Narcomoeba", "Narcomoeba", 
@@ -74,18 +78,17 @@ function show_image(src, width, height, alt) {
         for (var i = hand.length - 1; i > -1; i--) {
             if (hand[i] == this.alt){
                 hand[i] = "";
-                this.remove();
 
-                //hand_value = -100;
-                //draw_hand();
-                //document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
+                remove_images()
+
+                hand_value = -100;
+                draw_hand();
+                document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
                 break;
 
 
             }
         }
-
-
 
 
     })
@@ -113,10 +116,22 @@ function remove_images() {
 
 
 
+
 function draw_hand(hn){
 
     //loops though each element of the hand, literaly drawing the hand and scoreing it.
+    var handsize = 0;
+    for (var i = 0; i < 8; i++) {
+        
+        if (hand[i] == ""){
+            
+            handsize ++;
+        }
+    
 
+    }
+    handsize = 7-handsize;
+    
 
     var dredger_count = 0;
     var enabler_count = 0;
@@ -131,6 +146,7 @@ function draw_hand(hn){
     var reunion_check = 0;
     var looting_check = 0;
     var horn_check = 0;
+
 
     for (var i = 0; i < 8; i++) {
         if (hand[i] == "Bloodghast") {
@@ -594,16 +610,153 @@ function draw_hand(hn){
             hand_value -= 100;
         }
 
+
+
+
+
+        //mulls
+
+ 
+
+            hand_value = (hand_value / (8-handsize));
+            hand_value = Math.round(hand_value);
+
+
+        if (handsize == 2){
+
+            if (land_count == 1)
+            {
+                hand_value += 70;
+            }
+            if (land_count == 2){
+                hand_value += 95;
+            }
+            if (enabler_count > 0){
+                 hand_value += 50;
+            }
+            if (looting_check == 1 && land_count == 0){
+                hand_value += 30;
+            }
+        }
+
+
+        if (handsize == 3){
+
+            if (land_count > 0)
+            {
+                hand_value += 50;
+                if (loam_check == 1 && green_land_check == 1){
+                    hand_value += 50;
+                }
+            }
+            if (land_count == 0){
+                hand_value -= 12;
+            }
+            if (enabler_count > 0){
+                 hand_value += 50;
+            }
+            if (enabler_count > 1 && horn_check == 0 && reunion_check == 0){
+                hand_value += 25;
+            }
+
+        }
+
+        if (handsize == 4){
+
+            if (land_count > 0)
+            {
+                hand_value += 30;
+                if (loam_check == 1 && green_land_check == 1 && enabler_count == 0){
+                    hand_value += 40;
+                }
+            }
+            if (land_count == 0){
+                hand_value -= 12;
+            }
+            if (enabler_count > 0){
+                 hand_value += 40;
+            }
+            if (enabler_count > 1 && horn_check == 0 && reunion_check == 0){
+                hand_value += 25;
+            }
+        }
+
+        if (handsize == 5){
+
+            if (land_count > 0)
+            {
+                hand_value += 40;
+                if (loam_check == 1 && green_land_check == 1 && enabler_count == 0){
+                    hand_value += 30;
+                }
+            }
+            if (land_count == 0){
+                hand_value -= 22;
+            }
+            if (enabler_count > 0){
+                 hand_value += 50;
+            }
+        }
+
+
+        if (handsize == 6){
+
+
+
+            if (land_count > 0)
+            {
+                hand_value += 40;
+                if (land_count > 1 && green_land_check == 1){
+                    hand_value += 40;
+                }
+            }
+            if (land_count == 0){
+                hand_value -= 80;
+            }
+            if (enabler_count > 0){
+                 hand_value += 20;
+            }
+            for (var i = 0; i < 8; i++) {
+                if (hand[i] == "Narcomoeba" || hand[i] == "Creeping Chill") {
+                    hand_value -= 25;
+                }
+            }
+
+        }
+
+
+
         change_text(hand_value);
 
+        if (handsize == 0){
+            hand_value = 1;
+            display_text = "No Choice but to Keep";
+        }
+
+        if (handsize == 1){
+            for (var i = 0; i < 8; i++) {
+                if (hand[i] == "Narcomoeba" || hand[i] == "Creeping Chill") {
+                    hand_value = -25;
+                    display_text = "That's Better In the Deck";
+
+           }
+       }
+           if (hand_value != -25) {
+
+            hand_value += 84;
+            display_text = "Can't do Better on Zero";
+
+           }
+       
 
 
     }
+}
 
 
 function change_text(hv){
     //sets the phrase output baised on hand score
-    if (hv <= 400){
+    if (hv <= 700){
         display_text = "The BOOGYMAN!";
     }
 
@@ -696,6 +849,7 @@ function addCardToHand(card) {
 
 
 
+
 }
 
 
@@ -706,10 +860,11 @@ function clearHand(){
     draw_hand(hand);
     document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
 
+
 }
 
 function removeLastCard(){
-    remove_images();
+    
     var lastCard;
    if (hand[0] == ""){
         lastCard = 0;
@@ -738,9 +893,6 @@ function removeLastCard(){
     hand[lastCard] = "";
 
 
-  hand_value = -100;
-  draw_hand(hand);
-  document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
 
 }
 
@@ -748,3 +900,24 @@ function removeLastCard(){
 
 
 
+function mulligan(){
+    var emptycount = 1;
+    for (var i = 0; i < 8; i++) {
+        if (hand[i] == ""){
+            emptycount ++;
+        }
+
+    }
+    generateHand(decklist,hand);
+    while (emptycount > 0){
+        removeLastCard();
+        emptycount--;
+       
+    }
+
+  remove_images();
+  hand_value = -100;
+  draw_hand(hand);
+  document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
+
+}
