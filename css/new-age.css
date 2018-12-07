@@ -200,18 +200,18 @@ header.masthead .device-container .screen img {
  
 section.download {
   position: relative;
-  padding: 150px 0;
+  padding: 50px 0;
   margin-bottom: 0px;
 }
  
 section.download h2 {
   font-size: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
  
 section.download .badges .badge-link {
   display: block;
-  margin-bottom: 0px;
+  margin-bottom: 25px;
 }
  
 section.download .badges .badge-link:last-child {
@@ -219,7 +219,7 @@ section.download .badges .badge-link:last-child {
 }
  
 section.download .badges .badge-link img {
-  height: 60px;
+  height: 20px;
 }
  
 @media (min-width: 768px) {
@@ -231,9 +231,58 @@ section.download .badges .badge-link img {
  
 @media (min-width: 768px) {
   section.download h2 {
+    font-size: 50px;
+  }
+}
+ 
+
+
+
+
+section.message {
+  position: relative;
+  padding: 150px 0;
+  margin-bottom: 40px;
+}
+ 
+section.message h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+ 
+section.message .badges .badge-link {
+  display: block;
+  margin-bottom: 25px;
+}
+ 
+section.message .badges .badge-link:last-child {
+  margin-bottom: 0;
+}
+ 
+section.message .badges .badge-link img {
+  height: 60px;
+}
+ 
+@media (min-width: 768px) {
+  section.message .badges .badge-link {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+ 
+@media (min-width: 768px) {
+  section.message h2 {
     font-size: 70px;
   }
 }
+
+
+
+
+
+
+
+
  
 section.features .section-heading {
   margin-bottom: 100px;
