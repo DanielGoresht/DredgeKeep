@@ -45,7 +45,7 @@ h6 {
 p {
   font-size: 18px;
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
  
 section {
@@ -69,6 +69,8 @@ input
 {
     max-width: 10%;
     min-width: 50px;
+
+
     height: auto;
 }
 
@@ -77,6 +79,7 @@ input
     max-width: 9%;
     min-width: 75px;
     height: auto;
+   justify-content: center 
 }
 
 

@@ -65,7 +65,33 @@ function show_image(src, width, height, alt) {
     img.height = height;
     img.alt = alt;
 
-    // This next line will just add it to the <body> tag
+
+    
+
+    img.addEventListener("click",function(){
+        var list = document.getElementById("download");
+        //on click removes card from hand
+        for (var i = hand.length - 1; i > -1; i--) {
+            if (hand[i] == this.alt){
+                hand[i] = "";
+                this.remove();
+
+                //hand_value = -100;
+                //draw_hand();
+                //document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
+                break;
+
+
+            }
+        }
+
+
+
+
+    })
+    
+
+// This next line will just add it to the <body> tag
 
 
     document.getElementById("download").appendChild(img);
@@ -73,10 +99,11 @@ function show_image(src, width, height, alt) {
 
 
 function remove_images() {
-
+    //removes the pictures of cards in hand
     var list = document.getElementById("download");
     while (list.childNodes[3] == "[object HTMLImageElement]"){
         list.removeChild(list.childNodes[3]);
+
     }
 
     
@@ -632,29 +659,40 @@ function change_text(hv){
 
 function addCardToHand(card) {
     remove_images();
-    if (hand[0] == ""){
-        hand[0] = card;
-    }
-    else if (hand[1] == ""){
-        hand[1] = card;
-    }
-    else if (hand[2] == ""){
-        hand[2] = card;
-    }
-    else if (hand[3] == ""){
-        hand[3] = card;
-    }
-    else if (hand[4] == ""){
-        hand[4] = card;
-    }
-    else if (hand[5] == ""){
-        hand[5] = card;
-    }
-    else if (hand[6] == ""){
-        hand[6] = card;
+
+    //check if there are 4 copies of card in hand
+    var count = 0;
+    for (var i = hand.length - 1; i > -1; i--) { 
+        if (hand[i] == card) {
+            count ++
+        }
+
     }
 
+    if (count <= 3){
+        if (hand[0] == ""){
+            hand[0] = card;
+        }
+        else if (hand[1] == ""){
+            hand[1] = card;
+        }
+        else if (hand[2] == ""){
+            hand[2] = card;
+        }
+        else if (hand[3] == ""){
+            hand[3] = card;
+        }
+        else if (hand[4] == ""){
+            hand[4] = card;
+        }
+        else if (hand[5] == ""){
+            hand[5] = card;
+        }
+        else if (hand[6] == ""){
+            hand[6] = card;
+        }
 
+    }
 
 
 
