@@ -57,6 +57,8 @@
       </div>
     </nav>
 
+
+
     <header class="masthead">
       <div class="container h-100">
         <div class="row h-100">
@@ -89,34 +91,61 @@
         </div>
       </div>
     </header>
+
+
+
     <meta http-equiv=”refresh” content="5" >
     <section class="download bg-primary text-center" id="download">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 mx-auto">
+          <div class="col-lg-20 order-lg-1 mx-auto">
             <h2 class="section-heading">  
             <center>
-              <script type="text/javascript">
+<input type="image" src="img/bloodghast-button.jpg" title="Bloodghast" onclick="addCard('Bloodghast')" width="175" height="131">
+<input type="image" src="img/golgari-thug-button.jpg" title="Golgari Thug" onclick="addCard('Golgari Thug')" width="175" height="131">
+<input type="image" src="img/narcomoeba-button.jpg" title="Narcomoeba" onclick="addCard('Narcomoeba')" width="175" height="131">
+<input type="image" src="img/prized-amalgam-button.jpg" title="Prized Amalgam" onclick="addCard('Prized Amalgam')" width="175" height="131">
+<input type="image" src="img/stinkweed-imp-button.jpg" title="Stinkweed Imp" onclick="addCard('Stinkweed Imp')" width="175" height="131">
+<input type="image" src="img/conflagrate-button.jpg" title="Conflagrate" onclick="addCard('Conflagrate')" width="175" height="131">
+<input type="image" src="img/darkblast-button.jpg" title="Darkblast" onclick="addCard('Darkblast')" width="175" height="131">
+<input type="image" src="img/faithless-looting-button.jpg" title="Faithless Looting" onclick="addCard('Faithless Looting')" width="175" height="131">
+<input type="image" src="img/cathartic-reunion-button.jpg" title="Cathartic Reunion" onclick="addCard('Cathartic Reunion')" width="175" height="131">
+<input type="image" src="img/life-from-the-loam-button.jpg" title="Life from" onclick="addCard('Life from the Loam')" width="175" height="131">
+<input type="image" src="img/creeping-chill-button.jpg" title="Creeping Chill" onclick="addCard('Creeping Chill')" width="175" height="131">
+<input type="image" src="img/shriekhorn-button.jpg" title="Shriekhorn" onclick="addCard('Shriekhorn')" width="175" height="131">
 
-               
-              draw_hand(hand);
+<input type="image" src="img/blood-crypt-button.jpg" title="Blood Crypt" onclick="addCard('Blood Crypt')" width="175" height="131">
+<input type="image" src="img/bloodstained-mire-button.jpg" title="Bloodstained Mire" onclick="addCard('Bloodstained Mire')" width="175" height="131">
+<input type="image" src="img/city-of-brass-button.jpg" title="City of Brass" onclick="addCard('City of Brass')" width="175" height="131">
+<input type="image" src="img/copperline-gorge-button.jpg" title="Copperline Gorge" onclick="addCard('Copperline Gorge')" width="175" height="131">
+<input type="image" src="img/mountain-button.jpg" title="Mountain" onclick="addCard('Mountain')" width="175" height="131">
+<input type="image" src="img/gemstone-mine-button.jpg" title="Gemstone Mine" onclick="addCard('Gemstone Mine')" width="175" height="131">
+<input type="image" src="img/scalding-tarn-button.jpg" title="Scalding Tarn" onclick="addCard('Scalding Tarn')" width="175" height="131">
+<input type="image" src="img/stomping-ground-button.jpg" title="Stomping Ground" onclick="addCard('Stomping Ground')" width="175" height="131">
 
-              document.write(display_text)
-              </script>
-              <br>
-              Hand Score = 
-              <script type="text/javascript">
-              document.write(hand_value);      
-              </script>
-              
-            </br>
+
+
+<p id="hand"></p>
+
+<script>
+function addCard(nameOfCard) {
+  addCardToHand(nameOfCard);
+  hand_value = -100;
+  draw_hand(hand);
+  document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
+}
+</script>
+<section id="message"></section> 
 
             </h2>
-              <a href="javascript:window.location.reload()" class="btn btn-outline btn-xl js-scroll-trigger">Generate New Hand</a>
+
+              <a onclick="removeLastCard()" class="btn btn-outline btn-xl js-scroll-trigger">Remove Last</a>
+              <a onclick="clearHand()" class="btn btn-outline btn-xl js-scroll-trigger">Clear Hand</a>
+              <a onclick="generateHand(decklist, hand)" class="btn btn-outline btn-xl js-scroll-trigger">Random Hand</a>
               <br>
               <br>
-              <br>
-              
+
+ 
 
             </center>
           
@@ -124,8 +153,6 @@
         </div>
       </div>
     </section>
-
-
 
     <section class="cta">
       <div class="cta-content">
@@ -141,7 +168,7 @@
       <div class="container">
         <h2>Any hand with a score over 0 is a keep</h2>
       <br>
-        <h2>Plans to allow manual input of hand coming soon</h2>
+        <h2>Plans to allow manual imput of hand coming soon</h2>
       <br>
       <h2>Currently no way to test hands with less than 7 cards</h2>
       </div>
@@ -187,7 +214,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/new-age.min.js"></script>
+    <script src="js/new-age.js"></script>
 
   </body>
 
