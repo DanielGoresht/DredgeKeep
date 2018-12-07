@@ -23,7 +23,7 @@ var decklist = ["Bloodghast", "Bloodghast", "Bloodghast", "Bloodghast",
 "Scalding Tarn", "Scalding Tarn", "Scalding Tarn", 
 "Stomping Ground", "Stomping Ground"];
 
-var hand = ["Gemstone Mine","Shriekhorn","Bloodghast","Mountain","Bloodghast","Cathartic Reunion","Stomping Ground"];
+var hand = ["","","","","","",""];
 
 
 //generates hand from decklist
@@ -41,6 +41,8 @@ function shuffleArray(array) {
 
 function generateHand(dl,hn){
     //picks up 7 cards from the top of the randomized deck to generate a hand
+    remove_images();
+    hand_value = -100;
     shuffleArray(dl);
 
     var j;
@@ -48,6 +50,8 @@ function generateHand(dl,hn){
             hn[j] = dl[j];
             
     }
+    draw_hand(hn);
+    document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
     return(hn);
 }
 
@@ -65,9 +69,20 @@ function show_image(src, width, height, alt) {
 
 
     document.getElementById("download").appendChild(img);
-    //document.body.appendChild(img);
 }
 
+
+function remove_images() {
+
+    var list = document.getElementById("download");
+    while (list.childNodes[3] == "[object HTMLImageElement]"){
+        list.removeChild(list.childNodes[3]);
+    }
+
+    
+
+
+}
 
 
 
@@ -615,6 +630,83 @@ function change_text(hv){
 
 
 
+function addCardToHand(card) {
+    remove_images();
+    if (hand[0] == ""){
+        hand[0] = card;
+    }
+    else if (hand[1] == ""){
+        hand[1] = card;
+    }
+    else if (hand[2] == ""){
+        hand[2] = card;
+    }
+    else if (hand[3] == ""){
+        hand[3] = card;
+    }
+    else if (hand[4] == ""){
+        hand[4] = card;
+    }
+    else if (hand[5] == ""){
+        hand[5] = card;
+    }
+    else if (hand[6] == ""){
+        hand[6] = card;
+    }
 
 
-generateHand(decklist, hand)
+
+
+
+}
+
+
+function clearHand(){
+    remove_images();
+    hand = ["","","","","","",""];
+    hand_value = -100;
+    draw_hand(hand);
+    document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
+
+}
+
+function removeLastCard(){
+    remove_images();
+    var lastCard;
+   if (hand[0] == ""){
+        lastCard = 0;
+    }
+    else if (hand[1] == ""){
+        lastCard = 0;
+    }
+    else if (hand[2] == ""){
+       lastCard = 1;
+    }
+    else if (hand[3] == ""){
+        lastCard = 2;
+    }
+    else if (hand[4] == ""){
+        lastCard = 3;
+    }
+    else if (hand[5] == ""){
+        lastCard = 4;
+    }
+    else if (hand[6] == ""){
+        lastCard = 5;
+    }
+    else {
+        lastCard = 6;
+    }
+    hand[lastCard] = "";
+
+
+  hand_value = -100;
+  draw_hand(hand);
+  document.getElementById("message").innerHTML = display_text +  " <br /> " + " Hand Score = " + hand_value;
+
+}
+
+
+
+
+
