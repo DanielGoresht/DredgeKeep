@@ -607,7 +607,7 @@ function change_text(hv){
     }
 
     if (hv <= -0){
-        display_text = "'I'd Mull, but I'd be Theatrical About It'";
+        display_text = "'I'd Mull, but I'd be Theatrical'";
     }
     if (hv <= -40){
         display_text = "We Can Do Better";
